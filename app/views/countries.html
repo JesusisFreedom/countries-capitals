@@ -1,0 +1,22 @@
+<div class="row">
+  <div class="col-xs-12">
+    <table class="table table-condensed table-hover">
+      <thead>
+      <th>Country Name</th>
+      <th>Country Code</th>
+      <th>Capital</th>
+      <th>Size in km<sup>2</sup></th>
+      <th>Population</th>
+      </thead>
+      <tbody>
+      <tr ng-click="loadCountry(country)" ng-repeat="country in countries | orderBy:'countryName'">
+        <td>{{country.countryName}}</td>
+        <td>{{country.countryCode}}</td>
+        <td>{{country.capital}}</td>
+        <td>{{country.areaInSqKm | number: 0}}</td>
+        <td>{{country.population | number}}</td>
+      </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

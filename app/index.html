@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang='en' ng-app="countriesApp">
+<head>
+  <base href="/">
+  <link rel="stylesheet" href="https://bootswatch.com/readable/bootstrap.min.css">
+  <!-- build:css ./_assets/combined.css -->
+  <link rel="stylesheet" type="text/css" href="./bower_components/angular-loading-bar/build/loading-bar.min.css">
+  <link rel="stylesheet" type="text/css" href="./styles.css">
+  <!-- endbuild -->
+  <meta charset='UTF-8'/>
+
+  <title>Countries &amp; Capitals</title>
+</head>
+
+<body>
+<header class="text-center container">
+  <div class="row-centered">
+    <h1>Countries &amp; Capitals</h1>
+
+    <div class="col-xs-6 col-centered">
+      <div class="nav" ng-controller="NavCtrl">
+        <ul class="nav nav-pills">
+          <li ng-repeat="(name, link) in links" ng-class="{active:link===active}">
+            <a href="{{ link }}">{{name}}</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</header>
+
+<section class="main container">
+  <div ng-view class="view">
+  </div>
+</section>
+
+
+<!-- build:js ./_assets/combined.js -->
+<script src="./bower_components/angular/angular.js"></script>
+<script src="./bower_components/underscore/underscore.js"></script>
+<script src="./bower_components/angular-route/angular-route.js"></script>
+<script src="./bower_components/angular-animate/angular-animate.js"></script>
+<script src="./bower_components/angular-loading-bar/build/loading-bar.js"></script>
+<script src="app.js"></script>
+<script src="./services/countriesDataService.js"></script>
+<script src="./controllers/homeCtrl.js"></script>
+<script src="./controllers/navCtrl.js"></script>
+<script src="./controllers/countriesCtrl.js"></script>
+<script src="./controllers/countryInfoCtrl.js"></script>
+<script src="routes.js"></script>
+<!-- endbuild -->
+</body>
+</html>

@@ -1,0 +1,1 @@
+angular.module('countriesApp', ['ngRoute', 'angular-loading-bar', 'ngAnimate']);
