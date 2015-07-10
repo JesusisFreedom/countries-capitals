@@ -3,7 +3,6 @@ angular.module('countriesApp')
     $scope.countries = countries;
 
     $scope.loadCountry = function(country){
-      countriesDataService.currentCountry(country);
       $location.path('countries/'+country.countryCode);
     };
   }]);

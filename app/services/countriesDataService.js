@@ -20,9 +20,9 @@ angular.module('countriesApp')
         else return requestedCountry;
       },
       //Data Methods
-      neighbors: function (countryCode) {
+      neighbors: function (country) {
         var params = angular.extend({}, countriesDataServiceParams, {
-            country: countryCode
+            country: country.countryCode
           }),
           url = 'http://api.geonames.org/neighboursJSON';
 
@@ -36,8 +36,10 @@ angular.module('countriesApp')
             defer.reject("Cannot Access Data");
           })
           .success(function (data) {
-            defer.resolve(data.geonames);
+            country.neighbors = data.geonames;
+            defer.resolve(country.neighbors);
           });
+        return defer.promise;
       }
       ,
       capitalInfo: function (country) {
@@ -63,6 +65,7 @@ angular.module('countriesApp')
             }
             defer.resolve(country);
           });
+        return defer.promise;
       }
       ,
       countries: function () {

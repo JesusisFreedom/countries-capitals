@@ -1,12 +1,45 @@
 /* centered columns styles */
 .row-centered {
-    text-align:center;
+    text-align: center;
 }
+
 .col-centered {
-    display:inline-block;
-    float:none;
+    display: inline-block;
+    float: none;
     /* reset the text-align */
-    text-align:left;
+    text-align: left;
     /* inline-block space fix */
-    margin-right:-4px;
+    margin-right: -4px;
+}
+
+img {
+    max-width: 100%;
+}
+
+.view-wrapper {
+    position: relative;
+    perspective: 900px;
+}
+
+.view-wrapper .animate-view {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    transition: all .3s ease-out;
+}
+
+.view-wrapper .animate-view.ng-enter-active {
+    opacity: 1;
+    left: 0px;
+    zoom: 1;
+}
+
+.view-wrapper .animate-view.ng-enter {
+    opacity: 0;
+}
+
+.view-wrapper .animate-view.ng-leave-active {
+    opacity: 0;
+    transform: scale(2,3);
 }

@@ -1,5 +1,31 @@
 <div class="row">
   <div class="col-xs-12">
     <h1>{{country.countryName}}</h1>
+
+    <div class="col-md-4">
+      <p class="lead">Details</p>
+
+      <p>Population: {{country.population | number}}</p>
+
+      <p>Size: {{country.areaInSqKm | number: 0}}</p>
+
+      <p>Capital: {{country.capital}}</p>
+
+      <p>Poulation of Capital: {{country.capitalData.population | number}}</p>
+    </div>
+    <div class="col-md-4">
+      <div class="neighbors">
+        <p class="lead">Neighbors</p>
+        <span ng-show="!country.neighbors">Loading Neighbors</span>
+        <span ng-show="country.neighbors.length === 0">No Neighbors</span>
+
+        <p ng-repeat="neighbor in country.neighbors" class="neighbor"><a href="/countries/{{neighbor.countryCode}}">{{neighbor.countryName}}</a>
+        </p>
+      </div>
+    </div>
+    <div class="col-md-4">
+      <img id='map' ng-src="http://www.geonames.org/img/country/250/{{country.countryCode}}.png" >
+      <img id='flag' ng-src="http://www.geonames.org/flags/x/{{country.countryCode | lowercase}}.gif" >
+    </div>
   </div>
 </div>
