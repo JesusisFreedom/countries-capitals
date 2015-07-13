@@ -3,5 +3,4 @@ angular.module('countriesApp')
     $scope.country = countriesDataService.currentCountry($routeParams.country_code);
     countriesDataService.capitalInfo($scope.country);
     countriesDataService.neighbors($scope.country);
-
   }]);

@@ -1,0 +1,9 @@
+{
+  "name": "austinfwd-countries",
+  "root": "./app/build",
+  "clean_urls": true,
+  "cache_control": {},
+  "routes": {
+    "**": "index.html"
+  }
+}
